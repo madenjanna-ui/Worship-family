@@ -352,7 +352,7 @@ function renderTopics(set, isLeader = false) {
       <div class="topic-badge">💎</div>
       <div>
         <h3>${isLeader ? "Исследование" : "Твоё исследование"}</h3>
-        <div class="year-note">${years}</div>
+        <div class="year-note">Уточнение в понимании за ${years} год</div>
       </div>
     </div>
 
