@@ -186,6 +186,26 @@ function formatTime(seconds) {
 }
 
 songPlayBtn.addEventListener("click", async () => {
+  // При запуске песни для пения останавливаем фоновую музыку,
+  // чтобы две дорожки не звучали одновременно.
+  const bgAudio =
+    document.getElementById("backgroundMusic") ||
+    document.getElementById("bgMusic") ||
+    document.querySelector('audio[data-background-music]') ||
+    document.querySelector('audio[src*="Peaceful"]');
+
+  if (songAudio.paused) {
+    try {
+      if (bgAudio && !bgAudio.paused) {
+        bgAudio.pause();
+        bgAudio.dataset.pausedForSong = "true";
+      }
+      await songAudio.play();
+    } catch {}
+  } else {
+    songAudio.pause();
+  }
+});
   if (songAudio.paused) {
     try {
       await songAudio.play();
@@ -201,6 +221,19 @@ songAudio.addEventListener("play", () => {
 
 songAudio.addEventListener("pause", () => {
   songPlayBtn.textContent = "▶";
+});
+
+songAudio.addEventListener("ended", () => {
+  const bgAudio =
+    document.getElementById("backgroundMusic") ||
+    document.getElementById("bgMusic") ||
+    document.querySelector('audio[data-background-music]') ||
+    document.querySelector('audio[src*="Peaceful"]');
+
+  if (bgAudio && bgAudio.dataset.pausedForSong === "true") {
+    delete bgAudio.dataset.pausedForSong;
+    bgAudio.play().catch(() => {});
+  }
 });
 
 songAudio.addEventListener("loadedmetadata", () => {
