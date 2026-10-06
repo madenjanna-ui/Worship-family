@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#173f35">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Семейное поклонение</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,25 +17,21 @@
     <span id="musicIcon">♫</span>
   </button>
 
+  <!-- ОБЛОЖКА -->
   <main class="cover" id="cover">
 
-    <!-- Первая иллюстрация -->
     <section class="scene scene-one active" aria-hidden="true">
       <img src="assets/new-world.png" alt="">
     </section>
 
-    <!-- Иллюстрация с людьми -->
     <section class="scene scene-two" aria-hidden="true">
       <img src="assets/family.png" alt="">
     </section>
 
-    <!-- Текст появляется только после второй иллюстрации -->
     <section class="intro" id="intro">
       <div class="intro-glass">
         <div class="eyebrow">СЕМЕЙНОЕ ПОКЛОНЕНИЕ</div>
-
         <h1>Уточнение в понимании</h1>
-
         <div class="divider"></div>
 
         <blockquote>
@@ -49,8 +47,196 @@
         </button>
       </div>
     </section>
-
   </main>
+
+  <!-- БУКЛЕТ -->
+  <div class="booklet" id="booklet" hidden>
+
+    <header class="booklet-header">
+      <div>
+        <div class="header-title">СЕМЕЙНОЕ ПОКЛОНЕНИЕ</div>
+        <div class="header-subtitle">Уточнение в понимании · Притчи 4:18</div>
+      </div>
+      <button class="header-home" id="headerHome" type="button" aria-label="На главную">⌂</button>
+    </header>
+
+    <div class="booklet-content">
+
+      <!-- ГЛАВНОЕ МЕНЮ -->
+      <section class="panel menu-panel active" id="menuPanel">
+        <div class="welcome-card">
+          <div class="small-label">СОДЕРЖАНИЕ</div>
+          <h2>Наше семейное поклонение</h2>
+          <p>
+            Исследуем, размышляем и делимся тем, что помогает нам
+            лучше понимать Божье Слово.
+          </p>
+        </div>
+
+        <div class="menu-grid">
+          <button class="menu-card" data-panel="songPanel">
+            <span class="menu-icon">🎵</span>
+            <span class="menu-name">Песня</span>
+            <span class="menu-hint">Песня и слова</span>
+          </button>
+
+          <button class="menu-card" data-panel="participantsPanel">
+            <span class="menu-icon">👨‍👩‍👧‍👦</span>
+            <span class="menu-name">Участники</span>
+            <span class="menu-hint">Кто сегодня с нами</span>
+          </button>
+
+          <button class="menu-card" data-panel="myTopicPanel">
+            <span class="menu-icon">📖</span>
+            <span class="menu-name">Моя тема</span>
+            <span class="menu-hint">Открыть по коду</span>
+          </button>
+
+          <button class="menu-card" data-action="home">
+            <span class="menu-icon">🏡</span>
+            <span class="menu-name">На главную</span>
+            <span class="menu-hint">Вернуться к обложке</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ПЕСНЯ -->
+      <section class="panel" id="songPanel">
+        <button class="back-btn" data-action="menu">← К содержанию</button>
+
+        <div class="section-card">
+          <div class="section-icon">🎵</div>
+          <h2>Песня</h2>
+          <p class="muted">
+            Здесь будет песня, которую мы будем петь вместе.
+          </p>
+
+          <div class="song-placeholder">
+            <div class="song-art">♪</div>
+            <div>
+              <strong>Песня для начала</strong>
+              <span>Аудиофайл и слова можно добавить сюда.</span>
+            </div>
+          </div>
+
+          <div class="lyrics-box">
+            <div class="lyrics-title">📜 Слова песни</div>
+            <p class="muted">
+              Слова песни добавим после того, как ты загрузишь
+              нужную запись и текст.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- УЧАСТНИКИ -->
+      <section class="panel" id="participantsPanel">
+        <button class="back-btn" data-action="menu">← К содержанию</button>
+
+        <div class="section-card">
+          <div class="section-icon">👨‍👩‍👧‍👦</div>
+          <h2>Участники</h2>
+
+          <div class="participants-title">Кто сегодня с нами</div>
+
+          <div class="participants-list">
+            <div class="person">Жанна</div>
+            <div class="person">Иван</div>
+            <div class="person">Светлана</div>
+            <div class="person">Ирина</div>
+            <div class="person">Матвей</div>
+            <div class="person">Ева</div>
+            <div class="person">Денис</div>
+          </div>
+
+          <div class="task-card">
+            <div class="task-title">💎 Задание</div>
+            <p>
+              Подготовь рассказ по результатам своего исследования.
+            </p>
+
+            <div class="direction-title">Вопросы, которые помогут задать направление:</div>
+
+            <ul class="question-list">
+              <li>Что я узнал?</li>
+              <li>Что меня особенно впечатлило?</li>
+              <li>Что это показывает об Иегове?</li>
+              <li>Как я могу применить это в жизни?</li>
+            </ul>
+
+            <p class="note">
+              Вопросы приблизительные. Они просто помогут задать правильный
+              вектор для исследования и рассказа.
+            </p>
+
+            <p class="choice-note">
+              Можно исследовать <strong>все темы</strong> или выбрать
+              <strong>избирательно</strong> — одну или несколько тем,
+              которые особенно заинтересовали или впечатлили.
+            </p>
+          </div>
+
+          <div class="secret-note">
+            🔐 Своё индивидуальное задание можно узнать во вкладке
+            <strong>«Моя тема»</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- МОЯ ТЕМА -->
+      <section class="panel" id="myTopicPanel">
+        <button class="back-btn" data-action="menu">← К содержанию</button>
+
+        <div class="section-card code-card">
+          <div class="section-icon">📖</div>
+          <h2>Моя тема</h2>
+          <p class="muted">
+            Введи свой двухзначный код, чтобы открыть индивидуальное задание.
+          </p>
+
+          <div class="code-entry">
+            <input
+              id="codeInput"
+              type="text"
+              inputmode="numeric"
+              maxlength="2"
+              pattern="[0-9]{2}"
+              autocomplete="off"
+              placeholder="00"
+              aria-label="Двухзначный код"
+            >
+            <button id="openCodeBtn" type="button">Открыть</button>
+          </div>
+
+          <div class="code-message" id="codeMessage"></div>
+
+          <div class="topic-result" id="topicResult" hidden></div>
+        </div>
+      </section>
+
+      <!-- ВЕДУЩИЙ -->
+      <section class="panel" id="leaderPanel">
+        <button class="back-btn" data-action="menu">← К содержанию</button>
+
+        <div class="section-card">
+          <div class="section-icon">👑</div>
+          <h2>Режим ведущего</h2>
+          <p class="muted">
+            Все задания по порядку.
+          </p>
+
+          <div class="leader-progress" id="leaderProgress"></div>
+          <div id="leaderContent"></div>
+
+          <div class="leader-controls">
+            <button id="leaderPrev" type="button">← Назад</button>
+            <button id="leaderNext" type="button">Далее →</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
