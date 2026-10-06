@@ -206,14 +206,6 @@ songPlayBtn.addEventListener("click", async () => {
     songAudio.pause();
   }
 });
-  if (songAudio.paused) {
-    try {
-      await songAudio.play();
-    } catch {}
-  } else {
-    songAudio.pause();
-  }
-});
 
 songAudio.addEventListener("play", () => {
   songPlayBtn.textContent = "Ⅱ";
