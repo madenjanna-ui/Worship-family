@@ -558,6 +558,127 @@ blockquote {
   margin-bottom: 8px;
 }
 
+
+.song-player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #f3f6f1;
+  border: 1px solid rgba(23,63,53,.08);
+}
+
+.song-info strong,
+.song-info span {
+  display: block;
+}
+
+.song-info strong {
+  color: var(--green);
+  font-size: 20px;
+}
+
+.song-info span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.song-controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 14px;
+  padding: 12px 15px;
+  border-radius: 17px;
+  background: rgba(23,63,53,.06);
+}
+
+.song-play {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: var(--green);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.song-progress-wrap {
+  min-width: 0;
+  flex: 1;
+}
+
+#songProgress {
+  width: 100%;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.song-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lyrics-toggle {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(23,63,53,.14);
+  border-radius: 15px;
+  color: var(--green);
+  background: rgba(255,255,255,.72);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.lyrics-box {
+  margin-top: 14px;
+}
+
+.lyrics-subtitle {
+  margin-top: -4px;
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.lyrics-part,
+.lyrics-chorus {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+}
+
+.lyrics-label {
+  margin-bottom: 11px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.lyrics-lines > div {
+  margin: 7px 0;
+  line-height: 1.5;
+}
+
+.lyrics-chorus {
+  background: #fbf6e9;
+  border-color: rgba(201,154,74,.25);
+}
+
+.lyrics-chorus .lyrics-label {
+  color: #9a6e24;
+}
+
 .code-entry {
   display: flex;
   gap: 10px;
@@ -799,7 +920,128 @@ blockquote {
     grid-template-columns: 1fr;
   }
 
-  .code-entry {
+  
+.song-player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #f3f6f1;
+  border: 1px solid rgba(23,63,53,.08);
+}
+
+.song-info strong,
+.song-info span {
+  display: block;
+}
+
+.song-info strong {
+  color: var(--green);
+  font-size: 20px;
+}
+
+.song-info span {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.song-controls {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 14px;
+  padding: 12px 15px;
+  border-radius: 17px;
+  background: rgba(23,63,53,.06);
+}
+
+.song-play {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: var(--green);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.song-progress-wrap {
+  min-width: 0;
+  flex: 1;
+}
+
+#songProgress {
+  width: 100%;
+  accent-color: var(--green);
+  cursor: pointer;
+}
+
+.song-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lyrics-toggle {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(23,63,53,.14);
+  border-radius: 15px;
+  color: var(--green);
+  background: rgba(255,255,255,.72);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.lyrics-box {
+  margin-top: 14px;
+}
+
+.lyrics-subtitle {
+  margin-top: -4px;
+  margin-bottom: 20px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.lyrics-part,
+.lyrics-chorus {
+  margin-top: 22px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #fffdf8;
+  border: 1px solid var(--line);
+}
+
+.lyrics-label {
+  margin-bottom: 11px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.lyrics-lines > div {
+  margin: 7px 0;
+  line-height: 1.5;
+}
+
+.lyrics-chorus {
+  background: #fbf6e9;
+  border-color: rgba(201,154,74,.25);
+}
+
+.lyrics-chorus .lyrics-label {
+  color: #9a6e24;
+}
+
+.code-entry {
     flex-direction: column;
   }
 
@@ -886,4 +1128,134 @@ blockquote {
 .topic-body {
   min-width: 0;
   flex: 1;
+}
+
+
+@media (max-width: 600px) {
+  .song-controls {
+    gap: 9px;
+  }
+
+  .song-play {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .lyrics-part,
+  .lyrics-chorus {
+    padding: 15px;
+  }
+
+  .lyrics-lines > div {
+    margin: 8px 0;
+    line-height: 1.42;
+  }
+}
+
+
+/* =========================================
+   ЕДИНЫЙ GLASS-СТИЛЬ БУКЛЕТА
+   ========================================= */
+
+.booklet .nav-btn,
+.booklet .back-btn,
+.booklet .lyrics-toggle,
+.booklet .code-submit,
+.booklet .participant-card,
+.booklet .topic-card,
+.booklet .song-player,
+.booklet .song-controls,
+.booklet .lyrics-part,
+.booklet .lyrics-chorus,
+.booklet .code-box,
+.booklet .question-card {
+  background: rgba(255, 255, 255, .13) !important;
+  border: 1px solid rgba(255, 255, 255, .28) !important;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, .14),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+  backdrop-filter: blur(18px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
+}
+
+.booklet .nav-btn:hover,
+.booklet .back-btn:hover,
+.booklet .lyrics-toggle:hover,
+.booklet .participant-card:hover,
+.booklet .topic-card:hover {
+  background: rgba(255,255,255,.20) !important;
+  transform: translateY(-1px);
+}
+
+.booklet .nav-btn,
+.booklet .back-btn,
+.booklet .lyrics-toggle {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.55);
+}
+
+.booklet .nav-btn span,
+.booklet .back-btn span,
+.booklet .lyrics-toggle span {
+  color: inherit !important;
+}
+
+/* На тёмном фоне текст карточек должен оставаться читаемым. */
+.booklet .booklet-content,
+.booklet .booklet-content h1,
+.booklet .booklet-content h2,
+.booklet .booklet-content h3,
+.booklet .booklet-content strong,
+.booklet .booklet-content p,
+.booklet .booklet-content li,
+.booklet .booklet-content .topic-name,
+.booklet .booklet-content .topic-ref,
+.booklet .booklet-content .participant-name,
+.booklet .booklet-content .muted {
+  text-shadow: 0 1px 3px rgba(0,0,0,.45);
+}
+
+.booklet .topic-ref,
+.booklet .muted {
+  color: rgba(255,255,255,.78) !important;
+}
+
+/* Светлые внутренние поля слов песни оставляем читаемыми. */
+.booklet .lyrics-part,
+.booklet .lyrics-chorus {
+  color: #fff !important;
+}
+
+.booklet .lyrics-part .lyrics-label,
+.booklet .lyrics-chorus .lyrics-label {
+  color: #ffe2a0 !important;
+}
+
+.booklet .lyrics-subtitle {
+  color: #ffe2a0 !important;
+}
+
+/* Явная кнопка «Назад к содержанию». */
+.booklet .back-to-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  margin: 0 0 18px;
+  border-radius: 14px;
+  color: #fff !important;
+  background: rgba(255,255,255,.13) !important;
+  border: 1px solid rgba(255,255,255,.30) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.20);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.booklet .back-to-content:hover {
+  background: rgba(255,255,255,.21) !important;
 }

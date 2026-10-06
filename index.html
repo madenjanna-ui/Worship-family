@@ -61,6 +61,7 @@
     </header>
 
     <div class="booklet-content">
+          <button class="back-to-content" id="backToContent" type="button">← Назад к содержанию</button>
 
       <!-- ГЛАВНОЕ МЕНЮ -->
       <section class="panel menu-panel active" id="menuPanel">
@@ -111,20 +112,84 @@
             Здесь будет песня, которую мы будем петь вместе.
           </p>
 
-          <div class="song-placeholder">
+          <div class="song-player">
             <div class="song-art">♪</div>
-            <div>
-              <strong>Песня для начала</strong>
-              <span>Аудиофайл и слова можно добавить сюда.</span>
+            <div class="song-info">
+              <strong>Свет становится ярче</strong>
+              <span>Притчи 4:18</span>
             </div>
           </div>
 
-          <div class="lyrics-box">
-            <div class="lyrics-title">📜 Слова песни</div>
-            <p class="muted">
-              Слова песни добавим после того, как ты загрузишь
-              нужную запись и текст.
-            </p>
+          <audio id="songAudio" src="assets/sjjm_U_095.mp3" preload="metadata"></audio>
+
+          <div class="song-controls">
+            <button id="songPlayBtn" type="button" class="song-play">▶</button>
+            <div class="song-progress-wrap">
+              <input id="songProgress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Позиция песни">
+              <div class="song-time">
+                <span id="songCurrent">0:00</span>
+                <span id="songDuration">0:00</span>
+              </div>
+            </div>
+          </div>
+
+          <button id="lyricsToggle" type="button" class="lyrics-toggle">
+            📜 Показать слова
+          </button>
+
+          <div class="lyrics-box" id="lyricsBox" hidden>
+            <div class="lyrics-title">📜 Свет становится ярче</div>
+            <div class="lyrics-subtitle">Притчи 4:18</div>
+
+            <div class="lyrics">
+              <div class="lyrics-part">
+                <div class="lyrics-label">1.</div>
+                <div class="lyrics-lines">
+                  <div>Пророки желали узнать о Христе,</div>
+                  <div>Единой надежде творенья.</div>
+                  <div>Святой дух открыл, что Мессия придёт,</div>
+                  <div>Покажет всем путь для спасенья.</div>
+                  <div>То время пришло, наш Господь стал Царём,</div>
+                  <div>Священная тайна ясна.</div>
+                  <div>Открыто для нас через признак времён</div>
+                  <div>То, что ангелы жаждали знать.</div>
+                </div>
+              </div>
+
+              <div class="lyrics-chorus">
+                <div class="lyrics-label">ПРИПЕВ</div>
+                <div class="lyrics-lines">
+                  <div>Становится путь наш яснее,</div>
+                  <div>Мы ходим во свете, как днём.</div>
+                  <div>Внимай откровениям Бога,</div>
+                  <div>Он нас направляет во всём.</div>
+                </div>
+              </div>
+
+              <div class="lyrics-part">
+                <div class="lyrics-label">2.</div>
+                <div class="lyrics-lines">
+                  <div>Господь нам назначил раба своего,</div>
+                  <div>Он вовремя нам помогает.</div>
+                  <div>Свет истины ярче сияет теперь,</div>
+                  <div>Сердец и умов достигает.</div>
+                  <div>Наш путь с каждым днём всё светлей, как заря,</div>
+                  <div>Уверенней стали шагать.</div>
+                  <div>Как рады постичь и открыть для себя</div>
+                  <div>Многогранную мудрость Творца.</div>
+                </div>
+              </div>
+
+              <div class="lyrics-chorus">
+                <div class="lyrics-label">ПРИПЕВ</div>
+                <div class="lyrics-lines">
+                  <div>Становится путь наш яснее,</div>
+                  <div>Мы ходим во свете, как днём.</div>
+                  <div>Внимай откровениям Бога,</div>
+                  <div>Он нас направляет во всём.</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -165,6 +165,68 @@ musicToggle.addEventListener("click", async () => {
   }
 });
 
+
+/* =========================================
+   ПЕСНЯ
+   ========================================= */
+
+const songAudio = document.getElementById("songAudio");
+const songPlayBtn = document.getElementById("songPlayBtn");
+const songProgress = document.getElementById("songProgress");
+const songCurrent = document.getElementById("songCurrent");
+const songDuration = document.getElementById("songDuration");
+const lyricsToggle = document.getElementById("lyricsToggle");
+const lyricsBox = document.getElementById("lyricsBox");
+
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds)) return "0:00";
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60).toString().padStart(2, "0");
+  return `${mins}:${secs}`;
+}
+
+songPlayBtn.addEventListener("click", async () => {
+  if (songAudio.paused) {
+    try {
+      await songAudio.play();
+    } catch {}
+  } else {
+    songAudio.pause();
+  }
+});
+
+songAudio.addEventListener("play", () => {
+  songPlayBtn.textContent = "Ⅱ";
+});
+
+songAudio.addEventListener("pause", () => {
+  songPlayBtn.textContent = "▶";
+});
+
+songAudio.addEventListener("loadedmetadata", () => {
+  songDuration.textContent = formatTime(songAudio.duration);
+});
+
+songAudio.addEventListener("timeupdate", () => {
+  songCurrent.textContent = formatTime(songAudio.currentTime);
+  if (songAudio.duration) {
+    songProgress.value = (songAudio.currentTime / songAudio.duration) * 100;
+  }
+});
+
+songProgress.addEventListener("input", () => {
+  if (songAudio.duration) {
+    songAudio.currentTime = (Number(songProgress.value) / 100) * songAudio.duration;
+  }
+});
+
+lyricsToggle.addEventListener("click", () => {
+  lyricsBox.hidden = !lyricsBox.hidden;
+  lyricsToggle.textContent = lyricsBox.hidden
+    ? "📜 Показать слова"
+    : "📕 Скрыть слова";
+});
+
 /* =========================================
    ПЕРЕХОД: ОБЛОЖКА → БУКЛЕТ
    ========================================= */
@@ -406,3 +468,13 @@ leaderNext.addEventListener("click", () => {
     renderLeader();
   }
 });
+
+
+/* Назад к содержанию */
+const backToContent = document.getElementById("backToContent");
+if (backToContent) {
+  backToContent.addEventListener("click", () => {
+    const content = document.getElementById("content");
+    if (content) content.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
