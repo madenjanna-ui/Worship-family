@@ -244,15 +244,39 @@ blockquote {
    ========================= */
 
 .booklet {
+  position: relative;
   min-height: 100svh;
+  overflow: hidden;
+  background: #102f28;
+}
+
+.booklet::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
   background:
-    radial-gradient(circle at top right, rgba(201,154,74,.10), transparent 35%),
-    linear-gradient(180deg, #f8f3e8 0%, #fffdf8 100%);
+    linear-gradient(rgba(7, 35, 29, .48), rgba(7, 35, 29, .60)),
+    url("assets/family.png") 74% center / cover no-repeat;
+  filter: blur(7px);
+  transform: scale(1.045);
+}
+
+.booklet::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(255,255,255,.08), transparent 36%),
+    linear-gradient(180deg, rgba(10,45,37,.15), rgba(10,45,37,.38));
+  pointer-events: none;
 }
 
 .booklet-header {
   position: sticky;
   top: 0;
+  isolation: isolate;
   z-index: 40;
   display: flex;
   align-items: center;
@@ -296,6 +320,8 @@ blockquote {
 }
 
 .booklet-content {
+  position: relative;
+  z-index: 2;
   width: min(920px, 100%);
   margin: 0 auto;
   padding:
@@ -323,7 +349,9 @@ blockquote {
 .section-card {
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: rgba(255,255,255,.82);
+  background: rgba(255,250,240,.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow);
 }
 
@@ -818,4 +846,44 @@ blockquote {
   .scene img {
     animation: none;
   }
+}
+
+
+.all-year-block {
+  margin-top: 24px;
+  padding-top: 8px;
+}
+
+.all-year-title {
+  margin: 18px 0 10px;
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  border-bottom: 1px solid rgba(201,154,74,.30);
+  padding-bottom: 8px;
+}
+
+.topic-item {
+  display: flex;
+  gap: 12px;
+}
+
+.topic-number {
+  flex: 0 0 28px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  border-radius: 50%;
+  color: white;
+  background: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.topic-body {
+  min-width: 0;
+  flex: 1;
 }

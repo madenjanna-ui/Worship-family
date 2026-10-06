@@ -113,6 +113,16 @@ const researchSets = {
   Код ведущего 99 открывает все блоки один за другим.
   Имена участников намеренно НЕ привязаны к кодам на общей странице.
 */
+const participantCodes = {
+  "47": "01", // Жанна
+  "12": "02", // Иван
+  "83": "03", // Светлана
+  "26": "04", // Ирина
+  "61": "05", // Матвей
+  "35": "06", // Ева
+  "74": "ALL" // Денис — все блоки
+};
+
 const leaderCode = "99";
 const leaderSets = Object.values(researchSets);
 let leaderIndex = 0;
@@ -238,7 +248,7 @@ document.querySelectorAll('[data-action="menu"]').forEach(button => {
    ========================================= */
 
 function renderTopics(set, isLeader = false) {
-  const years = set.years.join(" + ");
+  const years = set.years.length > 1 ? set.years.join(" + ") : set.years[0];
 
   const topicsHtml = set.topics.map(([title, ref], index) => `
     <article class="topic-item">
@@ -262,11 +272,52 @@ function renderTopics(set, isLeader = false) {
     <p class="topic-intro">
       ${isLeader
         ? "Материалы этого блока."
-        : "В твоём распоряжении все темы этого года. Можно исследовать все темы или выбрать избирательно — одну или несколько, которые особенно заинтересовали или впечатлили."}
+        : "Ниже полностью приведены все темы, которые входят в твоё задание. Можно исследовать все темы или выбрать избирательно — одну или несколько, которые особенно заинтересовали или впечатлили."}
     </p>
 
     <div class="topics-list">${topicsHtml}</div>
 
+    <div class="topic-guidance">
+      <strong>Подготовь свой рассказ</strong>
+      <p>Вопросы приблизительные — они просто помогут задать правильный вектор:</p>
+      <ul class="question-list">
+        <li>Что я узнал?</li>
+        <li>Что меня особенно впечатлило?</li>
+        <li>Что это показывает об Иегове?</li>
+        <li>Как я могу применить это в жизни?</li>
+      </ul>
+    </div>
+  `;
+}
+
+
+function renderAllTopics() {
+  return `
+    <div class="topic-heading">
+      <div class="topic-badge">💎</div>
+      <div>
+        <h3>Все материалы</h3>
+        <div class="year-note">2020 → 2021 → 2022 → 2023 + 2026 → 2024 → 2025</div>
+      </div>
+    </div>
+    <p class="topic-intro">
+      Здесь собраны все темы из библиотеки. Можно исследовать все темы
+      или выбирать избирательно — то, что особенно заинтересовало или впечатлило.
+    </p>
+    ${leaderSets.map((set, i) => `
+      <div class="all-year-block">
+        <div class="all-year-title">${set.years.join(" + ")}</div>
+        ${set.topics.map(([title, ref], index) => `
+          <article class="topic-item">
+            <div class="topic-number">${index + 1}</div>
+            <div class="topic-body">
+              <div class="topic-name">${title}</div>
+              <div class="topic-ref">${ref}</div>
+            </div>
+          </article>
+        `).join("")}
+      </div>
+    `).join("")}
     <div class="topic-guidance">
       <strong>Подготовь свой рассказ</strong>
       <p>Вопросы приблизительные — они просто помогут задать правильный вектор:</p>
@@ -287,7 +338,7 @@ function openCode() {
   topicResult.hidden = true;
   topicResult.innerHTML = "";
 
-  if (!/^\\d{2}$/.test(code)) {
+  if (!/^\d{2}$/.test(code)) {
     codeMessage.textContent = "Введите двухзначный код.";
     return;
   }
@@ -298,21 +349,27 @@ function openCode() {
     return;
   }
 
-  const set = researchSets[code];
+  const assigned = participantCodes[code];
 
-  if (!set) {
+  if (!assigned) {
     codeMessage.textContent = "Такого кода нет. Проверьте код и попробуйте ещё раз.";
     return;
   }
 
-  topicResult.innerHTML = renderTopics(set);
+  if (assigned === "ALL") {
+    topicResult.innerHTML = renderAllTopics();
+  } else {
+    const set = researchSets[assigned];
+    topicResult.innerHTML = renderTopics(set);
+  }
+
   topicResult.hidden = false;
 }
 
 openCodeBtn.addEventListener("click", openCode);
 
 codeInput.addEventListener("input", () => {
-  codeInput.value = codeInput.value.replace(/\\D/g, "").slice(0, 2);
+  codeInput.value = codeInput.value.replace(/\D/g, "").slice(0, 2);
   codeMessage.textContent = "";
 });
 
