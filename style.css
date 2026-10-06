@@ -1884,3 +1884,117 @@ blockquote {
     font-size: 18px !important;
   }
 }
+
+
+/* =========================================
+   КРУПНЫЙ И БОЛЕЕ ОКРУГЛЫЙ ШРИФТ
+   ========================================= */
+
+.booklet,
+.booklet button,
+.booklet input {
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif !important;
+}
+
+/* Основной текст задания */
+.booklet .task-card p,
+.booklet .question-list li,
+.booklet .note,
+.booklet .choice-note,
+.booklet .secret-note {
+  font-size: 21px !important;
+  line-height: 1.7 !important;
+}
+
+/* Заголовки внутри задания */
+.booklet .task-title,
+.booklet .direction-title {
+  font-size: 23px !important;
+  line-height: 1.4 !important;
+}
+
+/* Имена */
+.booklet .person {
+  font-size: 22px !important;
+  line-height: 1.35 !important;
+}
+
+/* Песня — крупнее для чтения во время совместного пения */
+.booklet .lyrics-lines > div {
+  font-size: 22px !important;
+  line-height: 1.7 !important;
+  margin: 11px 0 !important;
+}
+
+.booklet .lyrics-label {
+  font-size: 21px !important;
+}
+
+.booklet .lyrics-title {
+  font-size: 29px !important;
+}
+
+.booklet .lyrics-subtitle {
+  font-size: 19px !important;
+}
+
+/* Моя тема */
+.booklet .topic-result .topic-name {
+  font-size: 22px !important;
+  line-height: 1.65 !important;
+}
+
+.booklet .topic-result .topic-ref {
+  font-size: 18px !important;
+}
+
+.booklet .topic-result .topic-intro,
+.booklet .topic-result .topic-guidance,
+.booklet .topic-result .topic-guidance p,
+.booklet .topic-result .topic-guidance li {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+}
+
+/* Обычные пояснения */
+.booklet .section-card > p,
+.booklet .section-card .muted {
+  font-size: 20px !important;
+  line-height: 1.65 !important;
+}
+
+/* На телефоне оставляем крупный, но комфортный размер */
+@media (max-width: 600px) {
+  .booklet .task-card p,
+  .booklet .question-list li,
+  .booklet .note,
+  .booklet .choice-note,
+  .booklet .secret-note {
+    font-size: 20px !important;
+  }
+
+  .booklet .task-title,
+  .booklet .direction-title {
+    font-size: 22px !important;
+  }
+
+  .booklet .person {
+    font-size: 21px !important;
+  }
+
+  .booklet .lyrics-lines > div {
+    font-size: 21px !important;
+    line-height: 1.7 !important;
+  }
+
+  .booklet .topic-result .topic-name {
+    font-size: 21px !important;
+  }
+
+  .booklet .topic-result .topic-intro,
+  .booklet .topic-result .topic-guidance,
+  .booklet .topic-result .topic-guidance p,
+  .booklet .topic-result .topic-guidance li {
+    font-size: 19px !important;
+  }
+}
