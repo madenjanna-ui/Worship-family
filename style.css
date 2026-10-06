@@ -2155,7 +2155,7 @@ blockquote {
 
 /* Строка "Уточнение в понимании за..." */
 .topic-result .year-note {
-  font-size: 21px !important;
+  font-size: 30px !important;
   line-height: 1.45 !important;
   font-weight: 600 !important;
 }
