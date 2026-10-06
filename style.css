@@ -2145,3 +2145,28 @@ blockquote {
     font-size: 17px !important;
   }
 }
+/* Заголовок задания */
+.topic-result .topic-heading h3,
+.topic-result h3 {
+  font-size: 30px !important;
+  line-height: 1.3 !important;
+  font-weight: 800 !important;
+}
+
+/* Строка "Уточнение в понимании за..." */
+.topic-result .year-note {
+  font-size: 21px !important;
+  line-height: 1.45 !important;
+  font-weight: 600 !important;
+}
+
+@media (max-width: 600px) {
+  .topic-result .topic-heading h3,
+  .topic-result h3 {
+    font-size: 27px !important;
+  }
+
+  .topic-result .year-note {
+    font-size: 19px !important;
+  }
+}
