@@ -499,7 +499,6 @@ leaderNext.addEventListener("click", () => {
 const backToContent = document.getElementById("backToContent");
 if (backToContent) {
   backToContent.addEventListener("click", () => {
-    const content = document.getElementById("content");
-    if (content) content.scrollIntoView({ behavior: "smooth", block: "start" });
+    showPanel("menuPanel");
   });
 }

@@ -1523,3 +1523,364 @@ blockquote {
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
 }
+
+
+/* =========================================
+   МОЯ ТЕМА — ЧИТАЕМОЕ ЗАДАНИЕ
+   ========================================= */
+
+.booklet .topic-result {
+  margin-top: 22px;
+  color: #fff;
+}
+
+.booklet .topic-result .topic-heading {
+  padding: 18px 18px 16px;
+  border-radius: 20px;
+  background: rgba(14,42,35,.52);
+  border: 1px solid rgba(255,255,255,.24);
+  box-shadow: 0 16px 38px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.12);
+}
+
+.booklet .topic-result h3 {
+  color: #f7e4bb !important;
+  margin: 0;
+  font-size: 28px;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .year-note {
+  color: rgba(255,255,255,.82) !important;
+  margin: 6px 0 0;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .topic-intro {
+  color: rgba(255,255,255,.90) !important;
+  line-height: 1.55;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .topic-item {
+  margin: 11px 0;
+  padding: 17px 18px;
+  border-radius: 17px;
+  background: rgba(14,42,35,.58) !important;
+  border: 1px solid rgba(255,255,255,.20) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 10px 26px rgba(0,0,0,.12);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.booklet .topic-result .topic-name {
+  color: #fff !important;
+  font-weight: 700;
+  line-height: 1.42;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .topic-ref {
+  margin-top: 7px;
+  color: rgba(255,255,255,.72) !important;
+  font-size: 14px;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .topic-number {
+  color: #173f35 !important;
+  background: #f7e4bb !important;
+  box-shadow: none !important;
+}
+
+.booklet .topic-result .topic-guidance {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 18px;
+  color: #fff;
+  background: rgba(14,42,35,.58) !important;
+  border: 1px solid rgba(255,255,255,.20) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.booklet .topic-result .topic-guidance strong {
+  color: #f7e4bb !important;
+  text-shadow: none !important;
+}
+
+.booklet .topic-result .topic-guidance p,
+.booklet .topic-result .topic-guidance li {
+  color: rgba(255,255,255,.90) !important;
+  text-shadow: none !important;
+}
+
+/* Общие карточки задания на странице «Участники» — тоже без белого текста
+   на светлом фоне. */
+.booklet .task-card,
+.booklet .secret-note {
+  background: rgba(14,42,35,.52) !important;
+  color: rgba(255,255,255,.92) !important;
+  border-color: rgba(255,255,255,.20) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.booklet .task-card .task-title,
+.booklet .task-card .direction-title {
+  color: #f7e4bb !important;
+}
+
+.booklet .task-card p,
+.booklet .task-card li,
+.booklet .secret-note {
+  color: rgba(255,255,255,.90) !important;
+  text-shadow: none !important;
+}
+
+.booklet .choice-note {
+  border-top-color: rgba(255,255,255,.18);
+}
+
+.booklet .person {
+  background: rgba(14,42,35,.48) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.20) !important;
+}
+
+/* Код ввода остаётся светлым, поэтому цифры — тёмные. */
+.booklet .code-entry input {
+  color: #173f35 !important;
+  background: rgba(255,255,255,.92) !important;
+}
+
+.booklet .code-entry input::placeholder {
+  color: rgba(23,63,53,.45) !important;
+}
+
+@media (max-width: 600px) {
+  .booklet .topic-result .topic-item {
+    padding: 15px;
+  }
+
+  .booklet .topic-result .topic-name {
+    font-size: 16px;
+  }
+
+  .booklet .topic-result .topic-ref {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================
+   УВЕЛИЧЕННЫЙ ТЕКСТ — МОЯ ТЕМА
+   ========================================= */
+
+.booklet .topic-result .topic-name {
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+}
+
+.booklet .topic-result .topic-ref {
+  font-size: 15px !important;
+}
+
+.booklet .topic-result .topic-intro {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+.booklet .topic-result .year-note {
+  font-size: 16px !important;
+}
+
+.booklet .topic-result .topic-guidance,
+.booklet .topic-result .topic-guidance p,
+.booklet .topic-result .topic-guidance li {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 600px) {
+  .booklet .topic-result .topic-name {
+    font-size: 18px !important;
+    line-height: 1.55 !important;
+  }
+
+  .booklet .topic-result .topic-ref {
+    font-size: 14px !important;
+  }
+
+  .booklet .topic-result .topic-intro {
+    font-size: 16px !important;
+  }
+
+  .booklet .topic-result .topic-guidance,
+  .booklet .topic-result .topic-guidance p,
+  .booklet .topic-result .topic-guidance li {
+    font-size: 16px !important;
+  }
+}
+
+
+/* =========================================
+   ОБЩЕЕ УВЕЛИЧЕНИЕ ТЕКСТА БУКЛЕТА
+   ========================================= */
+
+/* Обычный текст секций */
+.booklet .section-card p,
+.booklet .section-card .muted {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+/* Названия разделов */
+.booklet .section-card h2 {
+  font-size: 30px !important;
+}
+
+/* Участники */
+.booklet .participants-title {
+  font-size: 20px !important;
+}
+
+.booklet .person {
+  font-size: 18px !important;
+  padding: 13px 16px !important;
+}
+
+.booklet .task-title,
+.booklet .direction-title {
+  font-size: 19px !important;
+}
+
+.booklet .task-card p,
+.booklet .question-list li,
+.booklet .note,
+.booklet .choice-note,
+.booklet .secret-note {
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+}
+
+/* Песня */
+.booklet .song-info strong {
+  font-size: 23px !important;
+}
+
+.booklet .song-info span {
+  font-size: 16px !important;
+}
+
+.booklet .lyrics-title {
+  font-size: 24px !important;
+}
+
+.booklet .lyrics-subtitle {
+  font-size: 17px !important;
+}
+
+.booklet .lyrics-label {
+  font-size: 18px !important;
+}
+
+.booklet .lyrics-lines > div {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  margin: 9px 0 !important;
+}
+
+.booklet .lyrics-toggle {
+  font-size: 17px !important;
+}
+
+.booklet .song-time {
+  font-size: 14px !important;
+}
+
+/* Моя тема — комментарии и пояснения */
+.booklet .topic-result .topic-name {
+  font-size: 20px !important;
+}
+
+.booklet .topic-result .topic-ref {
+  font-size: 16px !important;
+}
+
+.booklet .topic-result .topic-intro,
+.booklet .topic-result .topic-guidance,
+.booklet .topic-result .topic-guidance p,
+.booklet .topic-result .topic-guidance li {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* Поля кода */
+.booklet .code-card > .muted {
+  font-size: 18px !important;
+}
+
+.booklet .code-entry input,
+.booklet .code-entry button {
+  font-size: 18px !important;
+}
+
+/* Главное меню */
+.booklet .welcome-card p {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+.booklet .menu-name {
+  font-size: 19px !important;
+}
+
+.booklet .menu-hint {
+  font-size: 15px !important;
+}
+
+@media (max-width: 600px) {
+  .booklet .section-card p,
+  .booklet .section-card .muted {
+    font-size: 17px !important;
+  }
+
+  .booklet .section-card h2 {
+    font-size: 27px !important;
+  }
+
+  .booklet .task-card p,
+  .booklet .question-list li,
+  .booklet .note,
+  .booklet .choice-note,
+  .booklet .secret-note {
+    font-size: 17px !important;
+  }
+
+  .booklet .lyrics-lines > div {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+  .booklet .lyrics-title {
+    font-size: 23px !important;
+  }
+
+  .booklet .topic-result .topic-name {
+    font-size: 19px !important;
+  }
+
+  .booklet .topic-result .topic-ref {
+    font-size: 15px !important;
+  }
+
+  .booklet .topic-result .topic-intro,
+  .booklet .topic-result .topic-guidance,
+  .booklet .topic-result .topic-guidance p,
+  .booklet .topic-result .topic-guidance li {
+    font-size: 17px !important;
+  }
+
+  .booklet .menu-name {
+    font-size: 18px !important;
+  }
+}
