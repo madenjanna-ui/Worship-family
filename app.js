@@ -120,10 +120,10 @@ const participantCodes = {
   "26": "04", // Ирина
   "61": "05", // Матвей
   "35": "06", // Ева
-  "74": "ALL" // Денис — все блоки
+  "740": "ALL" // Денис — все блоки
 };
 
-const leaderCode = "99";
+const leaderCode = "099";
 const leaderSets = Object.values(researchSets);
 let leaderIndex = 0;
 
@@ -135,7 +135,7 @@ async function startMusic() {
   if (musicStarted) return;
 
   try {
-    bgMusic.volume = 0.22;
+    bgMusic.volume = 0.15;
     await bgMusic.play();
     musicStarted = true;
     musicToggle.classList.add("playing");
@@ -425,10 +425,10 @@ function openCode() {
   topicResult.hidden = true;
   topicResult.innerHTML = "";
 
-  if (!/^\d{2}$/.test(code)) {
-    codeMessage.textContent = "Введите двухзначный код.";
-    return;
-  }
+if (!/^\d{2,3}$/.test(code)) {
+  codeMessage.textContent = "Введите код.";
+  return;
+}
 
   if (code === leaderCode) {
     leaderIndex = 0;
@@ -456,7 +456,7 @@ function openCode() {
 openCodeBtn.addEventListener("click", openCode);
 
 codeInput.addEventListener("input", () => {
-  codeInput.value = codeInput.value.replace(/\D/g, "").slice(0, 2);
+  codeInput.value = codeInput.value.replace(/\D/g, "").slice(0, 3);
   codeMessage.textContent = "";
 });
 
@@ -495,10 +495,3 @@ leaderNext.addEventListener("click", () => {
 });
 
 
-/* Назад к содержанию */
-const backToContent = document.getElementById("backToContent");
-if (backToContent) {
-  backToContent.addEventListener("click", () => {
-    showPanel("menuPanel");
-  });
-}

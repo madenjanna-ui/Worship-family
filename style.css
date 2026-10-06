@@ -1998,3 +1998,150 @@ blockquote {
     font-size: 19px !important;
   }
 }
+
+
+/* =========================================
+   РЕЖИМ ВЕДУЩЕГО — ЕДИНЫЙ ТЁМНЫЙ GLASS-СТИЛЬ
+   ========================================= */
+#leaderContent .topic-heading,
+#leaderContent .topic-item,
+#leaderContent .topic-guidance,
+#leaderContent .all-year-block {
+  background: rgba(7, 42, 35, .58) !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,.14), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  color: rgba(255,255,255,.94) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+#leaderContent .topic-name,
+#leaderContent .topic-item .topic-name,
+#leaderContent .topic-guidance,
+#leaderContent .topic-guidance p,
+#leaderContent .topic-guidance li,
+#leaderContent .topic-heading h3 {
+  color: rgba(255,255,255,.96) !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,.55) !important;
+}
+
+#leaderContent .topic-ref,
+#leaderContent .year-note {
+  color: rgba(255,255,255,.76) !important;
+}
+
+#leaderContent .topic-badge {
+  background: rgba(255,255,255,.12) !important;
+}
+
+#leaderContent .topic-guidance strong {
+  color: #ffe2a0 !important;
+}
+
+#leaderContent .question-list li::marker {
+  color: #ffe2a0 !important;
+}
+
+@media (max-width: 600px) {
+  #leaderContent .topic-item,
+  #leaderContent .topic-guidance {
+    padding: 18px !important;
+  }
+}
+
+
+/* =========================================
+   ВЕДУЩИЙ — КРУГЛЫЕ КАРТОЧКИ И КРУПНЫЕ ТЕМЫ
+   ========================================= */
+
+/* Основная карточка исследования */
+.booklet #leaderContent .leader-topic,
+.booklet #leaderContent .topic-block,
+.booklet #leaderContent .leader-card,
+.booklet #leaderContent .topic-result,
+.booklet #leaderContent > div {
+  border-radius: 24px !important;
+}
+
+/* Если блоки используют section/card-подобное оформление */
+.booklet #leaderContent .leader-topic,
+.booklet #leaderContent .topic-block,
+.booklet #leaderContent .leader-card {
+  overflow: hidden !important;
+}
+
+/* Кружочки номеров — заметнее и визуально отделены */
+.booklet #leaderContent .topic-number,
+.booklet #leaderContent .number,
+.booklet #leaderContent .item-number,
+.booklet #leaderContent .material-number {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  margin-right: 12px !important;
+}
+
+/* Темы материалов — крупнее */
+.booklet #leaderContent .material-title,
+.booklet #leaderContent .topic-title,
+.booklet #leaderContent .research-title,
+.booklet #leaderContent .topic-name {
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  font-weight: 800 !important;
+}
+
+/* Ссылки на источники немного меньше темы, но читаемые */
+.booklet #leaderContent .material-ref,
+.booklet #leaderContent .topic-ref,
+.booklet #leaderContent .reference,
+.booklet #leaderContent .source {
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+}
+
+/* Общие элементы ведущего */
+.booklet #leaderContent p,
+.booklet #leaderContent li {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 600px) {
+  .booklet #leaderContent .topic-number,
+  .booklet #leaderContent .number,
+  .booklet #leaderContent .item-number,
+  .booklet #leaderContent .material-number {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    font-size: 17px !important;
+    margin-right: 12px !important;
+  }
+
+  .booklet #leaderContent .material-title,
+  .booklet #leaderContent .topic-title,
+  .booklet #leaderContent .research-title,
+  .booklet #leaderContent .topic-name {
+    font-size: 20px !important;
+    line-height: 1.55 !important;
+  }
+
+  .booklet #leaderContent .material-ref,
+  .booklet #leaderContent .topic-ref,
+  .booklet #leaderContent .reference,
+  .booklet #leaderContent .source {
+    font-size: 16px !important;
+  }
+
+  .booklet #leaderContent p,
+  .booklet #leaderContent li {
+    font-size: 17px !important;
+  }
+}
