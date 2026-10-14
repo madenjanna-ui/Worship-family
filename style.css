@@ -2170,3 +2170,52 @@ blockquote {
     font-size: 24px !important;
   }
 }
+
+
+/* Индивидуальное задание — крупный округлый шрифт */
+.topic-heading h3,
+.topic-heading .year-note,
+.topic-name,
+.topic-ref,
+.time-limit {
+  font-family: "Nunito", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+}
+.topic-heading h3 {
+  font-size: 30px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  color: #f2cf72 !important;
+}
+.topic-heading .year-note {
+  font-size: 21px !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+  color: #ff8585 !important;
+  margin-top: 5px !important;
+}
+.topic-name {
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  font-weight: 800 !important;
+}
+.topic-ref {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+.time-limit {
+  margin: 18px 0;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.16);
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+}
+@media (max-width: 600px) {
+  .topic-heading h3 { font-size: 27px !important; }
+  .topic-heading .year-note { font-size: 20px !important; }
+  .topic-name { font-size: 20px !important; }
+  .topic-ref { font-size: 16px !important; }
+  .time-limit { font-size: 18px !important; }
+}
